@@ -1,0 +1,32 @@
+#%Module
+#
+# spark ver. 2.1.1 for Blue Waters
+#
+
+proc ModulesHelp { } {
+    puts stderr {
+
+Description
+===========
+Spark implementation for Blue Waters via Shifter. 
+    }
+}
+
+module-whatis {Spark implementation for Blue Waters via Shifter. }
+
+if { [ info exists env(PBS_NODEFILE) ] } {
+    setenv SPARK_MASTER_HOST [ exec cat $env(PBS_NODEFILE) | uniq | awk {{printf "nid%05d\n",$1}} | head -1 ]
+} else {
+    puts stderr "Spark Module cannot be loaded without a PBS job. "
+    exit 1
+}
+
+setenv SPARK_HOME /usr/local/bin/spark-2.1.1-bin-hadoop2.7
+setenv SPARK_SCRIPTS /u/staff/hwleong/soft/apps/spark/2.1.1
+setenv SPARK_CONF_DIR $env(SPARK_SCRIPTS)/conf
+
+prepend-path PATH $env(SPARK_SCRIPTS)/bin
+
+if { [ info exists env(JAVA_HOME) ] } {
+    unsetenv JAVA_HOME 
+}
