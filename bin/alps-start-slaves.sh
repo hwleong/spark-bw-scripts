@@ -49,7 +49,7 @@ fi
 
 SPARK_NUM_SLAVE_HOSTS=`expr $PBS_NUM_NODES - 2`
 
-BATCH_JOBID=`echo $PBS_JOBID | sed 's/\.jyc//g'`
+BATCH_JOBID=`echo $PBS_JOBID | sed 's/\.bw//g'`
 
 for apid in `apstat -r | grep batch:$BATCH_JOBID | grep "^A" | awk {'print $3'}`
 do
