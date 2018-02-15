@@ -1,3 +1,10 @@
+Install
+
+./install.sh install_prefix_path
+
+Example:
+$ ./install.sh /usr/local/spark/2.1.1
+
 Quick Start
 
 The following example assume 1 master, 1 slave and 1 submit hosts (total 18 compute nodes). 

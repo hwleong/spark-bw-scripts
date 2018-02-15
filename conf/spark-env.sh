@@ -50,7 +50,6 @@
 # - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
 # - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
 # - SPARK_WORKER_DIR, to set the working directory of worker processes
-SPARK_WORKER_DIR=/u/staff/hwleong/test/spark/work
 # - SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
 # - SPARK_DAEMON_MEMORY, to allocate to the master, worker and history server themselves (default: 1g).
 # - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
@@ -60,11 +59,8 @@ SPARK_WORKER_DIR=/u/staff/hwleong/test/spark/work
 
 # Generic options for the daemons used in the standalone deploy mode
 # - SPARK_CONF_DIR      Alternate conf dir. (Default: ${SPARK_HOME}/conf)
-SPARK_CONF_DIR=/u/staff/hwleong/test/spark/conf
 # - SPARK_LOG_DIR       Where log files are stored.  (Default: ${SPARK_HOME}/logs)
-SPARK_LOG_DIR=/scratch/staff/hwleong/spark
 # - SPARK_PID_DIR       Where the pid file is stored. (Default: /tmp)
 # - SPARK_IDENT_STRING  A string representing this instance of spark. (Default: $USER)
 # - SPARK_NICENESS      The scheduling priority for daemons. (Default: 0)
 # - SPARK_NO_DAEMONIZE  Run the proposed command in the foreground. It will not output a PID file.
-#SPARK_NO_DAEMONIZE=1
