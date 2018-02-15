@@ -6,6 +6,20 @@ usage()
     echo Example: ./install.sh /usr/local
 }
 
+while getopts :h OPT
+do
+    case $OPT in
+        h)
+            usage
+            exit 1
+            ;;
+        \?)
+            usage
+            exit 1
+            ;;
+    esac
+done
+
 if [ $# != 1 ]
 then
     echo Please specify an installation path. 
